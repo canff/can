@@ -6,6 +6,8 @@ DOMAIN-SUFFIX,cm.bilibili.com,REJECT
 URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/ad,REJECT
 URL-REGEX,^https?:\/\/api\.bilibili\.com\/pgc\/season\/app\/related\/recommend\?,REJECT
 URL-REGEX,^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.comic\/flash,REJECT
+#youtube
+URL-REGEX,https:\/\/[\s\S]*\.googlevideo\.com/.*&(oad|ctier),REJECT
 
 # WeiBo
 DOMAIN-suffix, wbpctips.mobile.sina.cn, REJECT
@@ -39,6 +41,8 @@ DOMAIN-suffix, adimg.uve.weibo.com, REJECT
 ^https?:\/\/api\.bilibili\.com\/pgc\/season\/app\/related\/recommend\? - reject-dict
 # BiliBili漫画去广告
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash - reject-dict
+#youtube
+ctier=[A-Z] citer=A 302
 
 [Script]
 # Weibo
@@ -83,4 +87,4 @@ http-response ^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/theme) requires-body=1,max-s
 http-response ^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
 
 [MITM]
-hostname = api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, ios.prod.ftl.netflix.com, api.m.jd.com, trade-acs.m.taobao.com,app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, *.kuwo.cn, vip1.kuwo.cn, weixin110.qq.com
+hostname = api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, ios.prod.ftl.netflix.com, api.m.jd.com, trade-acs.m.taobao.com,app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, *.kuwo.cn, vip1.kuwo.cn, weixin110.qq.com, *.googlevideo.com

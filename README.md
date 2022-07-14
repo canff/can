@@ -1,4 +1,4 @@
-use for quanx
+used for quanx
 
 include filter and rewrite
 
